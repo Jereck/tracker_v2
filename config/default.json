@@ -1,0 +1,5 @@
+{
+    // "mongoURI": "mongodb+srv://Jereck:stella1011@clusterura-46p8o.mongodb.net/test?retryWrites=true&w=majority",
+    "mongoURI": "mongodb://jereck:stella1011@ds349247.mlab.com:49247/ura",
+    "jwtSecret": "ur_myJWTSecret"
+}
