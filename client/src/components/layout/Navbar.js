@@ -9,7 +9,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   const authLinks = (
     <ul className="nav" role="navigation">
       <li>
-        <Link to="/">Home</Link>
+        <Link to="/dashboard">Dashboard</Link>
       </li>
       <li>
         <a onClick={logout} href='#!'>Logout</a>
