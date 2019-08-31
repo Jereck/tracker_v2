@@ -13,6 +13,7 @@ const Dashboard = ({ getCurrentProfile, auth: { user }, profile: { profile, load
   return loading && profile === null ? <Spinner /> : <Fragment>
     <h1>Dashboard</h1>
     <p>Welcome, { user && user.name }</p>
+    { console.log(user) }
     {/* CHANGE TO TASKS */}
     { profile !== null ? <Fragment>has</Fragment> : <Fragment>has not</Fragment>}
   </Fragment>;
