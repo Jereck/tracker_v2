@@ -1,14 +1,25 @@
-import React, { Fragment, useState } from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import React, { Fragment, useState, useEffect } from 'react';
+import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { createProfile } from '../../actions/profile';
+import { createProfile, getCurrentProfile } from '../../actions/profile';
 
-const CreateProfile = ({ createProfile, history }) => {
+const CreateProfile = ({ profile: { profile, loading }, createProfile, getCurrentProfile, history }) => {
   const [formData, setFormData] = useState({
     capacity: '0',
-    daysOff: '0'
+    daysOff: '0',
   });
+
+  const [displayCapacity, toggleCapacity] = useState(false);
+
+  useEffect(() => {
+    getCurrentProfile();
+
+    setFormData({
+      capacity: loading || !profile.capacity ? '0' : profile.capacity,
+      daysOff: loading || !profile.daysOff ? '0' : profile.daysOff
+    })
+  }, [loading])
 
   const {
     capacity,
@@ -19,7 +30,7 @@ const CreateProfile = ({ createProfile, history }) => {
 
   const onSubmit = e => {
     e.preventDefault();
-    createProfile(formData, history)
+    createProfile(formData, history, true)
   }
 
   return (
@@ -40,7 +51,13 @@ const CreateProfile = ({ createProfile, history }) => {
 
 CreateProfile.propTypes = {
   createProfile: PropTypes.func.isRequired,
+  getCurrentProfile: PropTypes.func.isRequired,
+  profile: PropTypes.object.isRequired,
 };
 
+const mapStateToProps = state => ({
+  profile: state.profile
+})
 
-export default connect(null, { createProfile })(withRouter(CreateProfile));
+
+export default connect(mapStateToProps, { createProfile, getCurrentProfile })(withRouter(CreateProfile));
