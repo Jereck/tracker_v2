@@ -35,7 +35,7 @@ router.post('/', auth, async (req, res) => {
     const profileField = {};
     profileField.user = req.user.id;
     if(capacity) profileField.capacity = capacity;
-    if(daysOff) profileField = daysOff;
+    if(daysOff) profileField.daysOff = daysOff;
 
     try{
         let profile = await Profile.findOne({ user: req.user.id });
