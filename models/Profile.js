@@ -13,16 +13,6 @@ const ProfileSchema = new mongoose.Schema({
         type: Number,
         default: 0
     },
-    // daysOff: [
-    //     {
-    //         startDate: {
-    //             type: Date
-    //         },
-    //         endDate: {
-    //             type: Date
-    //         }
-    //     }
-    // ],
     date: {
         type: Date,
         default: Date.now

@@ -10,8 +10,6 @@ const CreateProfile = ({ profile: { profile, loading }, createProfile, getCurren
     daysOff: '0',
   });
 
-  const [displayCapacity, toggleCapacity] = useState(false);
-
   useEffect(() => {
     getCurrentProfile();
 

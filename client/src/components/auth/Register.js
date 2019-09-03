@@ -41,7 +41,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
                   type="text" 
                   placeholder="Enter your name" 
                   name="name" 
-                  alue={name} onChange={e => onChange(e)} 
+                  value={name} onChange={e => onChange(e)} 
                   id="name" />
 
           <label for="email">Email</label>
@@ -53,7 +53,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
           <label for="password">Re-enter Password</label>
           <input className="form-input" type="password" placeholder="Enter Password..." name="password2" value={password2} onChange={e => onChange(e)} id="password2" />
 
-          <label for="email">Position</label>
+          <label for="position">Position</label>
           <input className="form-input" type="text" placeholder="URC/URA" name="position" value={position} onChange={e => onChange(e)} id="position" />
 
           <input type="submit" value="Register"  className="button" />

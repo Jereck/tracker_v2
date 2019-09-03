@@ -26,17 +26,17 @@ const Login = ({ login, isAuthenticated }) => {
   return (
     <Fragment>
       <form className="form" onSubmit={e => onSubmit(e)}>
-          <h1 className="form-title">Login</h1>
+        <h1 className="form-title">Login</h1>
 
-          <label for="email">Email</label>
-          <input className="form-input" type="text" placeholder="Enter Email..." name="email" value={email} onChange={e => onChange(e)} id="email" />
+        <label for="email">Email</label>
+        <input className="form-input" type="text" placeholder="Enter Email..." name="email" value={email} onChange={e => onChange(e)} id="email" />
 
-          <label for="password">Password</label>
-          <input className="form-input" type="password" placeholder="Enter Password..." name="password" value={password} onChange={e => onChange(e)} id="password" />
+        <label for="password">Password</label>
+        <input className="form-input" type="password" placeholder="Enter Password..." name="password" value={password} onChange={e => onChange(e)} id="password" />
 
-          <input type="submit" value="Login"  className="button" />
-          Need an account? <Link to="/register">Register</Link>
-        </form>
+        <input type="submit" value="Login"  className="button" />
+        Need an account? <Link to="/register">Register</Link>
+      </form>
     </Fragment>
   );
 };
